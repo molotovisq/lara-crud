@@ -11,6 +11,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+     //Nesta perte, editei para inserir as colunas desejadas
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
