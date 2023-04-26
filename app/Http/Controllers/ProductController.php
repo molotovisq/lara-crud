@@ -20,7 +20,7 @@ class ProductController extends Controller
         return view('products.index',compact('products'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-  
+   
     /**
      * Show the form for creating a new resource.
      */
@@ -36,13 +36,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
+            'price' => 'required',
+            'quant' => 'required',
         ]);
         
         Product::create($request->all());
          
         return redirect()->route('products.index')
-                        ->with('success','Product created successfully.');
+                        ->with('success','Produto criado com sucesso.');
     }
   
     /**
@@ -68,7 +69,8 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
+            'price' => 'required',
+            'quant' => 'required',
         ]);
         
         $product->update($request->all());

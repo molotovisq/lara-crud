@@ -30,20 +30,20 @@
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
+                    <strong>Nome:</strong>
+                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Nome">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Price:</strong>
-                    <textarea class="form-control" name="price" placeholder="Price">{{ $product->price }}</textarea>
+                    <strong>Preço:</strong>
+                    <textarea class="form-control" name="price" placeholder="0.00">{{ $product->price }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail" pattern="[0-9.]+">{{ $product->detail }}</textarea>
+                    <strong>Quant:</strong>
+                    <input class="form-control" style="height:150px" name="quant" placeholder="quantidade" pattern="[0-9.]+">{{ $product->quant }}</input>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
