@@ -16,3 +16,5 @@ use App\Http\Controllers\ProductController;
 */
   
 Route::resource('products', ProductController::class);
+
+Route::get('products/data', 'ProductController@getData')->name('products.data');

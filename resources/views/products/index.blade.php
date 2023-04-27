@@ -16,9 +16,25 @@
 </div>
 @endif
 
+<div class="row">
+    <div class="col-lg-8 text-left">
+    </div>
+    <div class="col-lg-4 d-flex justify-content-end">
+        <form action="/products" method="GET" class="form-inline">
+            <div class="input-group">
+                <input type="search" name="search" class="form-control">
+                <div class="input-group-append ms-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-search"></i> Pesquisar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 <table id="products-table" class="table table-bordered table-responsive mt-4">
     <tr>
-        <th class="text-center">No</th>
+        <th class="text-center">ID</th>
         <th class="text-center">Nome</th>
         <th class="text-center">Preço</th>
         <th class="text-center">Quantidade</th>
@@ -30,7 +46,7 @@
     </tr>
     @foreach ($products as $product)
     <tr>
-        <td class="text-center">{{ ++$i }}</td>
+        <td class="text-center">{{ $product->id }}</td>
         <td class="text-center">{{ $product->name }}</td>
         <td class="text-center">R${{ number_format($product->price,2,'.','') }}</td>
         <td class="text-center">{{ $product->quant }}</td>
@@ -57,6 +73,7 @@
     @endforeach
 </table>
 
-{!! $products->links() !!}
+
+{!! $products->appends(request()->except('page'))->links() !!}
 
 @endsection

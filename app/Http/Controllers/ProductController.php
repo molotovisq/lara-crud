@@ -9,22 +9,26 @@ use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 
+
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(): View
+
+    public function index(Request $request): View
     {
 
-        //Modificado de paginate para simple-paginate
+        if ($request->has('search')) {
+            $products = Product::where('name', 'LIKE', '%' .$request->search.'%')->paginate(5);
 
-        $products = Product::latest()->paginate(5);
-        
-        return view('products.index', compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        } else {
+            $products = Product::latest()->paginate(5);
+            print_r($_GET);
+            
+        }
+        return view('products.index', compact('products'));
     }
-    
+
+
+
 
     /**
      * Show the form for creating a new resource.
