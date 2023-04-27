@@ -37,13 +37,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Preço:</strong>
-                    <textarea class="form-control" name="price" placeholder="0.00">{{ $product->price }}</textarea>
+                    <input type="text" name="price" value="{{ $product->price }}" class="form-control" placeholder="1.00" pattern="[0-9.]+">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Quant:</strong>
-                    <input class="form-control" style="height:150px" name="quant" placeholder="quantidade" pattern="[0-9.]+">{{ $product->quant }}</input>
+                    <strong>Quantidade:</strong>
+                    <input type="text" name="quant" value="{{ $product->quant }}" class="form-control" placeholder="1.00" pattern="[0-9]+">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

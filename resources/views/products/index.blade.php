@@ -6,10 +6,7 @@
         <div class="pull-left">
             <h2>Produtos HotSat <i class="fa-solid fa-satellite-dish" style="color: #ff0000;"></i></h2>
         </div>
-        <div class="pull-right">
 
-
-        </div>
     </div>
 </div>
 
@@ -19,13 +16,13 @@
 </div>
 @endif
 
-<table class="table table-bordered table-responsive mt-4">
+<table id="products-table" class="table table-bordered table-responsive mt-4">
     <tr>
         <th class="text-center">No</th>
         <th class="text-center">Nome</th>
         <th class="text-center">Preço</th>
         <th class="text-center">Quantidade</th>
-        <th class="text-center" >
+        <th class="text-center">
             <a class="btn btn-success" href="{{ route('products.create') }}">
                 <i class="fa-solid fa-plus"></i>
                 Novo Produto </a>
@@ -36,24 +33,24 @@
         <td class="text-center">{{ ++$i }}</td>
         <td class="text-center">{{ $product->name }}</td>
         <td class="text-center">R${{ number_format($product->price,2,'.','') }}</td>
-        <td class="text-center" >{{ $product->quant }}</td>
+        <td class="text-center">{{ $product->quant }}</td>
         <td class="text-center">
             <form action="{{ route('products.destroy',$product->id) }}" method="POST">
 
                 <a class="btn btn-info " href="{{ route('products.show',$product->id) }}">
-                <i class="fa-solid fa-eye"></i>
-                     </a>
+                    <i class="fa-solid fa-eye"></i>
+                </a>
 
                 <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">
                     <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
+                </a>
 
                 @csrf
                 @method('DELETE')
 
                 <button type="submit" class="btn btn-danger">
                     <i class="fa-solid fa-trash"></i>
-                    </button>
+                </button>
             </form>
         </td>
     </tr>
