@@ -20,9 +20,7 @@ class ProductController extends Controller
             $products = Product::where('name', 'LIKE', '%' .$request->search.'%')->paginate(5);
 
         } else {
-            $products = Product::latest()->paginate(5);
-            print_r($_GET);
-            
+            $products = Product::orderBy('id','asc')->paginate(5);
         }
         return view('products.index', compact('products'));
     }
