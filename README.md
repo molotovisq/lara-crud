@@ -2,6 +2,8 @@
 
 Este projeto tem como objetivo demonstrar meus conhecimentos na utilização do PHP, juntamente com o framework laravel e banco de dados MySQL.
 
+Além do solicitado na task, foi também realizado o deploy da aplicação numa máquina virtual AWS (EC2) utilizando o apache2 como servidor WEB.
+
 ### Link para teste:
 
 http://ec2-18-230-60-56.sa-east-1.compute.amazonaws.com/
