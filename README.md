@@ -6,7 +6,7 @@ Além do solicitado na task, foi também realizado o deploy da aplicação numa 
 
 ### Link para teste:
 
-http://ec2-18-230-60-56.sa-east-1.compute.amazonaws.com/
+http://molotovisq.site/
 
 
 ## Stack utilizada
